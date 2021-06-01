@@ -1,0 +1,11 @@
+*.o
+*.log*
+*build-*
+*.pro.user
+bin/
+.vscode
+.user
+.filters
+x64
+Debug
+Release
