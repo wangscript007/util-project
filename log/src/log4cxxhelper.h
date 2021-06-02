@@ -19,82 +19,82 @@
 #include "log4cxx/logger.h"
 
 
-#define LOG_TEMP_SIZE   (5 * 1024)
+#define LOG4_TEMP_SIZE   (5 * 1024)
 
 #ifdef _WIN32
 
-#define LOG_TRACE(tag, fmt, ...) \
+#define LOG4_TRACE(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_TRACE(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_DEBUG(tag, fmt, ...) \
+#define LOG4_DEBUG(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_DEBUG(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_INFO(tag, fmt, ...) \
+#define LOG4_INFO(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_INFO(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_WARN(tag, fmt, ...) \
+#define LOG4_WARN(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_WARN(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_ERROR(tag, fmt, ...) \
+#define LOG4_ERROR(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_ERROR(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_FATAL(tag, fmt, ...) \
+#define LOG4_FATAL(tag, fmt, ...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, __VA_ARGS__); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, __VA_ARGS__); \
     LOG4CXX_FATAL(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
 #else
 
-#define LOG_TRACE(tag, fmt, arg...) \
+#define LOG4_TRACE(tag, fmt, arg...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG_TEMP4_SIZE, fmt, ##arg); \
     LOG4CXX_TRACE(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_DEBUG(tag, fmt, arg...) \
+#define LOG4_DEBUG(tag, fmt, arg...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, ##arg); \
     LOG4CXX_DEBUG(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_INFO(tag, fmt, arg...) \
+#define LOG4_INFO(tag, fmt, arg...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, ##arg); \
     LOG4CXX_INFO(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_WARN(tag, fmt, arg...) \
+#define LOG4_WARN(tag, fmt, arg...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, ##arg); \
     LOG4CXX_WARN(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_ERROR(tag, fmt, arg...) \
+#define LOG4_ERROR(tag, fmt, arg...) \
     do { \
     char szInfo[LOG_TEMP_SIZE] = {0}; \
     snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
     LOG4CXX_ERROR(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
-#define LOG_FATAL(tag, fmt, arg...) \
+#define LOG4_FATAL(tag, fmt, arg...) \
     do { \
-    char szInfo[LOG_TEMP_SIZE] = {0}; \
-    snprintf(szInfo, LOG_TEMP_SIZE, fmt, ##arg); \
+    char szInfo[LOG4_TEMP_SIZE] = {0}; \
+    snprintf(szInfo, LOG4_TEMP_SIZE, fmt, ##arg); \
     LOG4CXX_FATAL(log4cxx::Logger::getLogger(tag), szInfo); } while(0)
 
 #endif

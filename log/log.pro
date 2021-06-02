@@ -7,7 +7,7 @@ CONFIG -= qt
 
 unix {
     LIBS += -lpthread
-    LIBS += -L"$$PWD/../lib/linux" -llog4cxx -lapr-1 -laprutil-1 -lcrypto -lexpat -lssl
+    LIBS += -L"$$PWD/../lib/linux/log4cxx" -llog4cxx -lapr-1 -laprutil-1 -lcrypto -lexpat -lssl
     DESTDIR += $$PWD/../bin/linux
 }
 
