@@ -4,8 +4,8 @@
 *.pro.user
 bin/
 .vscode
-.user
-.filters
+*.user
+*.filters
 x64
 Debug
 Release
