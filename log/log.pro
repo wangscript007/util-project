@@ -13,7 +13,7 @@ unix {
 
 
 INCLUDEPATH += \
-    $$PWD/../src \
+    $$PWD/src \
     $$PWD/../inc
 
 

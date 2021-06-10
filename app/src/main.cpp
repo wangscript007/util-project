@@ -2,6 +2,8 @@
 #include <thread>
 #include <chrono>
 
+#include "exceptionutil.h"
+
 #include "log4cxxhelper.h"
 #include "evpp/tcp_server.h"
 #include "evpp/tcp_client.h"
@@ -20,6 +22,9 @@
 #include "evpp/windows_port.h"
 static OnApp *gs_pObjAPP = nullptr;
 #endif
+
+#include "mongoclientdriverutil.h"
+
 
 void logTest()
 {
@@ -187,16 +192,47 @@ void httpServerTest()
     return;
 }
 
+void mongoClientDriverTest()
+{
+    MongoClientDriver::MongoClientDriverUtil objUtil;
+    bool bRet = objUtil.connectDBServer("mongodb://192.168.49.129:27017/?maxPoolSize=10");
+    std::cout << "connect ret: " << bRet << std::endl;
+    objUtil.addRecordByJson("mongotest", "testdb", "{\"key\":\"this is info again\", \"value\":123, \"extra\":\"test is ok\"}");
+
+    std::map<std::string, std::string> mp4Records;
+    mp4Records["name"] = "zhangsan";
+    mp4Records["age"] = "24";
+    mp4Records["sex"] = "male";
+    objUtil.addRecordByMap("mongotest", "testdb", mp4Records);
+
+    std::vector<std::string> vtRetKeys;
+    vtRetKeys.clear();
+    std::vector<std::string> vtRecords;
+    vtRecords.clear();
+
+    objUtil.queryRecords("mongotest", "testdb", "", "", vtRetKeys, vtRecords);
+    for(size_t i = 0, iSize = vtRecords.size(); i < iSize; ++i)
+    {
+        std::cout << vtRecords[i] << std::endl;
+    }
+
+    //objUtil.dropCollection("mongotest", "testdb");
+
+    return;
+}
+
 int main(int argc, char** argv)
 {
     std::cout << "Hello utility!!!" << std::endl;
+    ExceptionUtil::setExceptionHandler(ExceptionUtil::getAppName());
 
     logTest();
+    mongoClientDriverTest();
 
     google::InitGoogleLogging(argv[0]);
     google::SetStderrLogging(google::GLOG_WARNING);
-    initNetEnv();
-    httpServerTest();
+    //initNetEnv();
+    //httpServerTest();
     //tcpClientTest();
     //tcpServerTest();
 
