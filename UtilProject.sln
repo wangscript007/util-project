@@ -6,9 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app", "app\app.vcxproj", "{8FD70D05-0E0E-4CC7-8181-2E4EBFE8A07D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9C1FD92D-3CDC-4689-9233-02ED37ED2D18} = {9C1FD92D-3CDC-4689-9233-02ED37ED2D18}
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D} = {30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "log", "log\log.vcxproj", "{9C1FD92D-3CDC-4689-9233-02ED37ED2D18}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mongoclientdriver", "mongoclientdriver\mongoclientdriver.vcxproj", "{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +37,14 @@ Global
 		{9C1FD92D-3CDC-4689-9233-02ED37ED2D18}.Release|x64.Build.0 = Release|x64
 		{9C1FD92D-3CDC-4689-9233-02ED37ED2D18}.Release|x86.ActiveCfg = Release|Win32
 		{9C1FD92D-3CDC-4689-9233-02ED37ED2D18}.Release|x86.Build.0 = Release|Win32
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Debug|x64.ActiveCfg = Debug|x64
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Debug|x64.Build.0 = Debug|x64
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Debug|x86.ActiveCfg = Debug|Win32
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Debug|x86.Build.0 = Debug|Win32
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Release|x64.ActiveCfg = Release|x64
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Release|x64.Build.0 = Release|x64
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Release|x86.ActiveCfg = Release|Win32
+		{30C5D79A-5B15-49DB-AEFF-FDDF0089D26D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

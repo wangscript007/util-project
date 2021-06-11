@@ -197,6 +197,9 @@ void mongoClientDriverTest()
     MongoClientDriver::MongoClientDriverUtil objUtil;
     bool bRet = objUtil.connectDBServer("mongodb://192.168.49.129:27017/?maxPoolSize=10");
     std::cout << "connect ret: " << bRet << std::endl;
+
+    objUtil.dropCollection("mongotest", "testdb");
+    
     objUtil.addRecordByJson("mongotest", "testdb", "{\"key\":\"this is info again\", \"value\":123, \"extra\":\"test is ok\"}");
 
     std::map<std::string, std::string> mp4Records;
@@ -215,8 +218,6 @@ void mongoClientDriverTest()
     {
         std::cout << vtRecords[i] << std::endl;
     }
-
-    //objUtil.dropCollection("mongotest", "testdb");
 
     return;
 }
